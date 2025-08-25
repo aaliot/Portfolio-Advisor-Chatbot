@@ -1,94 +1,83 @@
-📈 AI Portfolio Advisor
+# 📊 Portfolio Chatbot
 
-An interactive portfolio recommendation chatbot built with FastAPI, yFinance, and React.
-It helps users, especially beginner investors, get stock allocation suggestions based on their risk level and investment amount.
+An AI-powered investment assistant that builds personalized stock portfolios based on user **risk tolerance** and **investment amount**.  
+The app suggests stocks, shows portfolio allocations, and visualizes performance with interactive charts.
 
-This project demonstrates:
+---
 
-⚡ Full-stack engineering (FastAPI backend + React frontend)
+## 🚀 Features
 
-📊 Real-time financial data integration (via yFinance
-)
+- ✅ Chatbot interface for portfolio recommendations  
+- ✅ User inputs: **risk level** & **investment amount**  
+- ✅ Portfolio allocation with sector breakdown  
+- ✅ Interactive chart visualization (Recharts)  
+- ✅ Real-time stock data (via [Yahoo Finance](https://pypi.org/project/yfinance/))  
+- ✅ Backend powered by **FastAPI**  
+- ✅ Frontend built with **React + TailwindCSS**  
 
-🤖 AI-style chatbot interface for better UX
+---
 
-🔒 CORS handling and structured API design with FastAPI
+## 🛠️ Tech Stack
 
-🚀 Features
+**Frontend**  
+- React  
+- TailwindCSS  
+- Recharts  
 
-✅ Risk-based Portfolio Suggestions – Users choose low, medium, or high risk, and get a recommended stock allocation.
-✅ Investment Scaling – Enter an amount (e.g., £10,000) and see exact stock allocations.
-✅ Live Market Data – Fetches real stock prices using yFinance to calculate allocations.
-✅ API-Driven Architecture – Clean backend endpoints, easy to extend for more asset classes.
-✅ Frontend Chatbot UI – Users interact as if they’re talking to a financial assistant.
+**Backend**  
+- FastAPI (Python)  
+- yfinance (Yahoo Finance API wrapper)  
 
-🏗️ Tech Stack
+---
 
-Backend: FastAPI
- (Python)
+## ⚡ Getting Started
 
-Frontend: React + Vite
-
-Data Source: Yahoo Finance (via yfinance)
-
-Validation: Pydantic
-
-Deployment Ready: Can run locally or be hosted on Render, Heroku, or Vercel.
-
-📂 Project Structure
-portfolio-advisor/
-│── backend/
-│   ├── main.py         # FastAPI app (portfolio recommendation logic)
-│   ├── requirements.txt # Dependencies
-│
-│── frontend/
-│   ├── src/
-│   │   ├── App.jsx     # Chatbot UI
-│   │   ├── api.js      # API calls to backend
-│   └── package.json    # Frontend dependencies
-│
-│── README.md
-
-⚙️ Installation & Setup
-1️⃣ Backend (FastAPI)
+### 1. Clone the repo
+```bash
+git clone https://github.com/YOUR_USERNAME/portfolio-chatbot.git
+cd portfolio-chatbot
+2. Backend setup
+bash
+Copy
+Edit
 cd backend
 python -m venv venv
-source venv/bin/activate   # (Windows: venv\Scripts\activate)
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+
 pip install -r requirements.txt
 uvicorn main:app --reload
+The backend runs at: http://127.0.0.1:8000
 
-
-By default, API runs at: http://127.0.0.1:8000
-
-2️⃣ Frontend (React + Vite)
+3. Frontend setup
+bash
+Copy
+Edit
 cd frontend
 npm install
 npm run dev
+The frontend runs at: http://localhost:5173
 
-
-Frontend runs at: http://localhost:5173
-
-📌 API Example
-
-POST /recommend
-
-Request:
-
-{
-  "risk_level": "medium",
-  "investment": 10000
-}
-
-
-Response:
-
-{
-  "portfolio": {
-    "AAPL": 3000,
-    "TSLA": 4000,
-    "JNJ": 3000
-  }
-}
+📂 Project Structure
+plaintext
+Copy
+Edit
+portfolio-chatbot/
+│
+├── backend/                  # FastAPI backend
+│   ├── main.py                # API endpoints
+│   ├── portfolio.py           # Portfolio logic
+│   ├── requirements.txt       # Python dependencies
+│
+├── frontend/                 # React frontend
+│   ├── src/
+│   │   ├── App.jsx            # Main app
+│   │   ├── components/        # Reusable UI components
+│   │   ├── assets/            # Images/icons
+│   ├── package.json
+│   └── tailwind.config.js
+│
+└── README.md
 
 💡 Future Enhancements
 
@@ -100,17 +89,4 @@ Response:
 
 🧠 Use ML to recommend personalized portfolios
 
-📚 Why This Project?
 
-This isn’t just a toy project—it mimics real-world fintech apps like Nutmeg, Wealthfront, or Betterment.
-It shows off:
-
-Your ability to build full-stack apps
-
-Comfort with APIs & data pipelines
-
-Knowledge of finance + tech integration
-
-Perfect for a portfolio piece when applying for software engineering, fintech, or data-driven roles.
-
-✨ Built by Aaliyah – exploring the intersection of AI, finance, and software engineering.
